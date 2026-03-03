@@ -50,8 +50,8 @@ function Pokegame() {
     return (
         <div className="pokegame">
             {rollLegendary && <h2>✨ Legendary Appeared! ✨</h2>}
-            <Pokedex pokemon={hand1} exp={exp1} isWinner={exp1 > exp2} />
-            <Pokedex pokemon={hand2} exp={exp2} isWinner={exp2 > exp1} />
+            <Pokedex pokemon={hand1} exp={exp1} isWinner={exp1 > exp2} player="You" />
+            <Pokedex pokemon={hand2} exp={exp2} isWinner={exp2 > exp1} player="Opponent" />
         </div>
     );
 }
