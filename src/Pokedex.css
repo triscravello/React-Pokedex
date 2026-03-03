@@ -11,7 +11,34 @@
     justify-content: center;
 }
 
+.pokedex h2 {
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: #fff;
+    text-shadow: 2px 2px 0 black;
+}
+
 .winner-message {
-    color: green;
+    color: black;
     font-weight: bold;
+}
+
+.pokedex:nth-child(1) {
+    background: #3B4CCA; /* Blue for player */
+    border: 3px solid gold;
+    box-shadow: 0 0 15px gold;
+}
+
+.pokedex:nth-child(2) {
+    background: #FF0000; /* Red for opponent */
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.03); }
+    100% { transform: scale(1); }
+}
+
+.pokedex.winner {
+    animation: pulse 1s infinite;
 }

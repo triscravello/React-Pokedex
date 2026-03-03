@@ -4,25 +4,21 @@ import './Pokedex.css';
 
 // Pokedex is provided, via props, an array of objects describing different Pokemon, and renders a equence of Pokecard components.
 
-function Pokedex ({pokemon, exp, isWinner}) {
+function Pokedex ({pokemon, exp, isWinner, player}) {
     return (
-        <div className="pokedex">
-            <h2>Total EXP: {exp}</h2>
+        <div className={`pokedex ${isWinner ? 'winner' : ''}`}>
+            <h2>{player}'s Hand</h2>
+            <p>Total EXP: {exp}</p>
             <div className="pokedex-cards">
                 {pokemon.map((p) => (
                 <Pokecard
                     key={p.id}
-                    id={p.id}
-                    name={p.name}
-                    type={p.type}
-                    base_experience={p.base_experience}
+                    {...p}
                 />
             ))}
 
-            </div>
-            <h3 className="winner-message">
-                {isWinner ? 'THIS HAND WINS!' : ''}
-            </h3>
+        </div>
+        {isWinner && <h3 className='winner-message'>Winner! 🎉</h3>}
         </div>
     );
 }
