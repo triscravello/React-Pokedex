@@ -4,10 +4,11 @@ import "./Pokecard.css";
 // Shows a single Pokemon, with their name, image, and type.
 
 function Pokecard ({id, name, type, base_experience}) {
-    const image = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`
+    const image = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`;
+    const isLegendary = base_experience >= 261; // Arbitrary threshold for legendary status
 
     return (
-        <div className="pokecard">
+        <div className={`pokecard ${isLegendary ? 'legendary' : ''}`}>
             <h2 className="pokecard-name">{name}</h2>
             <img className="pokecard-image" src={image} alt={name}></img>
             <p className="pokecard-type">Type: {type}</p>

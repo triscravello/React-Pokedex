@@ -8,6 +8,7 @@
     width: 150px;
     background-color: #f5f5f5;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s ease;
 }
 
 .pokecard-name {
@@ -18,4 +19,19 @@
 .pokecard-type,
 .pokecard-base_experience {
     font-size: 80%
+}
+
+.pokecard:hover {
+    transform: scale(1.08);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+}
+
+.pokecard:hover img {
+    transform: rotate(-3deg);
+}
+
+.pokecard.legendary {
+    border: 3px solid gold;
+    box-shadow: 0 0 20px gold;
+    background: linear-gradient(135deg, #fff7c2, #ffe066);
 }
