@@ -1,17 +1,27 @@
+/* src/App.css */
 .App {
   text-align: center;
 }
 
 button {
-  background: #FFCB05;
-  border: none;
-  padding: 12px 20px;
-  font-size: 16px;
-  border-radius: 8px;
+  background: #FF0000;
+  color: white;
+  border: 4px solid black;
+  padding: 14px 24px;
+  font-size: 12px; /* Press Start 2P is a pixel font, so smaller size looks better */
+  border-radius: 12px;
   cursor: pointer;
-  transition: transform 0.2s ease;
+  font-family: 'Press Start 2P', cursive;
+  letter-spacing: 1px;
+  transition: transform 0.2s ease, box-shadow 0.15s ease, background 0.15s ease;
 }
 
 button:hover {
-  transform: scale(1.1);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 0 black;
+}
+
+button:active {
+  transform: translateY(2px);
+  box-shadow: 0 3px 0 black;
 }
